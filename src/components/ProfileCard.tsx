@@ -1,7 +1,22 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Github, Mail, Linkedin, ExternalLink } from "lucide-react";
+import { Github, Mail, Linkedin, SquareCode } from "lucide-react";
 import profileImage from "@/assets/profile-hero.jpg";
+
+const handleSocialLinkClick = (socialPlatform: string): void => {
+  let socialURL: string = "";
+  if(socialPlatform === "GH") {
+    socialURL = "https://github.com/het-t/";
+  }
+  else if (socialPlatform === "LI") {
+    socialURL = "https://linkedin.com/in/het-tarkhala-2054732a1";
+  }
+  else if (socialPlatform === "LC") {
+    socialURL = "https://leetcode.com/u/hettarkhala068/";
+  }
+
+  window.open(socialURL, '_blank');
+}
 
 export const ProfileCard = () => {
   return (
@@ -44,32 +59,21 @@ export const ProfileCard = () => {
         <div className="flex flex-wrap gap-4">
           <Button variant="outline" size="sm" className="gap-2">
             <Mail className="h-4 w-4" />
-            your.email@example.com
+            hettarkhala068@gmail.com
           </Button>
-          <Button variant="outline" size="sm" className="gap-2">
+          <Button variant="outline" size="sm" className="gap-2" onClick={() => handleSocialLinkClick("GH")}>
             <Github className="h-4 w-4" />
             GitHub
           </Button>
-          <Button variant="outline" size="sm" className="gap-2">
+          <Button variant="outline" size="sm" className="gap-2" onClick={() => handleSocialLinkClick("LI")}>
             <Linkedin className="h-4 w-4" />
             LinkedIn
           </Button>
-        </div>
 
-        {/* Quick Stats */}
-        <div className="grid grid-cols-3 gap-4 pt-4">
-          <div className="text-center p-4 rounded-lg bg-gradient-card border">
-            <div className="text-2xl font-bold text-primary">125</div>
-            <div className="text-sm text-muted-foreground">Days Streak</div>
-          </div>
-          <div className="text-center p-4 rounded-lg bg-gradient-card border">
-            <div className="text-2xl font-bold text-success">48</div>
-            <div className="text-sm text-muted-foreground">Problems Solved</div>
-          </div>
-          <div className="text-center p-4 rounded-lg bg-gradient-card border">
-            <div className="text-2xl font-bold text-accent">12</div>
-            <div className="text-sm text-muted-foreground">Books Read</div>
-          </div>
+          <Button variant="outline" size="sm" className="gap-2" onClick={() => handleSocialLinkClick("LC")}>
+            <SquareCode className="h-4 w-4" />
+            LeetCode
+          </Button>
         </div>
       </div>
     </div>

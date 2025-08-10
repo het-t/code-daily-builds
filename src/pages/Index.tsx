@@ -1,6 +1,9 @@
 import { ProfileCard } from "@/components/ProfileCard";
 import { DailyUpdates } from "@/components/DailyUpdates";
 import { ProgressChart } from "@/components/ProgressChart";
+import { TaskManager } from "@/components/TaskManager";
+import { LearningArticles } from "@/components/LearningArticles";
+import { PhilosophicalWritings } from "@/components/PhilosophicalWritings";
 
 const Index = () => {
   return (
@@ -31,8 +34,23 @@ const Index = () => {
           <ProgressChart />
         </section>
 
-        {/* Daily Updates */}
+        {/* Task Management */}
         <section className="animate-fade-in" style={{ animationDelay: '800ms' }}>
+          <TaskManager />
+        </section>
+
+        {/* Learning Articles */}
+        <section className="animate-fade-in" style={{ animationDelay: '1000ms' }}>
+          <LearningArticles />
+        </section>
+
+        {/* Philosophical Writings */}
+        <section className="animate-fade-in" style={{ animationDelay: '1200ms' }}>
+          <PhilosophicalWritings />
+        </section>
+
+        {/* Daily Updates */}
+        <section className="animate-fade-in" style={{ animationDelay: '1400ms' }}>
           <DailyUpdates />
         </section>
       </main>
